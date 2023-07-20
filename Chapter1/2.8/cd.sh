@@ -33,7 +33,7 @@ get_confirm() {
 
 set_menu_choice() {
     clear
-    echo "Option :-"
+    echo "Option :"
     echo
     echo "   a) Add new CD"
     echo "   f) Find CD"
@@ -168,9 +168,9 @@ find_cd() {
     get_return
 
     if [ "$asklist" = "y" ]; then
-        echo -n "View tracks for this CD "
+        echo -n "View tracks for this CD? (y/n) "
         read x
-        if [ "$x" = "y"]; then
+        if [ "$x" = "y" ]; then
             echo
             list_tracks
             echo
@@ -187,7 +187,7 @@ update_cd() {
     fi
 
     if [ -n  "$cdcatnum" ]; then
-        echo "Current tracks are :-"
+        echo "Current tracks are :"
         list_tracks
         echo
         echo "This will re-enter the tracks for $cdtitle"
@@ -235,15 +235,16 @@ remove_records() {
 list_tracks() {
     if [ "$cdcatnum" = "" ]; then
         echo No Cd selected yet
+        get_return
         return
     else
-        grep -v "^${cdcatnum}" $tracks_file > $temp_file
-        num_tracks=${wc -l $temp_file}
+        grep "^${cdcatnum}," $tracks_file > $temp_file
+        num_tracks=$(wc -l $temp_file)
         if [ "$num_tracks" = "0" ]; then
             echo no tracks found for $cdtitle
         else {
             echo
-            echo "$cdtitle :-"
+            echo "$cdtitle :"
             echo
             cut -f 2- -d , $temp_file
             echo
