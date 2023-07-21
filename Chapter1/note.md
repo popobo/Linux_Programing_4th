@@ -1,0 +1,32 @@
+# 入门
+- 1.1 UNIX、Linux和GUN简介
+    - 1.1.1 什么是UNIX
+        - 1.UNIX简史
+        - 2.UNIX哲学
+            - 简单性：KISS
+            - 集中性（功能单一性）
+            - 可重用组件
+            - 过滤器
+            - 开发的文件格式
+            - 灵活性
+    - 1.1.2 什么是Linux
+    - 1.1.3 GNU项目和自由软件基金会
+    - 1.1.4 Linux发生版
+- 1.2 Linux程序设计
+    - 1.2.1 Linux程序
+        - 可执行文件和脚本
+    - 1.2.2 文本编辑器
+    - 1.2.3 C语言编辑器
+    - 1.2.4 开发系统引导
+        - 1.应用程序
+        - 2.头文件
+        - 3.库文件
+        - 4.静态库
+            - ar crv libfoo.a bill.o fred.o (c create r insert v verbose)
+        - 5.共享库
+            - /etc/ld.so.config，ldconfig
+            - ldd 查看程序需要的动态库
+- 1.3 获得帮助
+    - man
+    - info
+- 1.4 小结
