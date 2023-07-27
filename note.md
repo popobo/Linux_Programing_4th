@@ -1,0 +1,130 @@
+# 入门
+- 1.1 UNIX、Linux和GUN简介
+    - 1.1.1 什么是UNIX
+        - 1.UNIX简史
+        - 2.UNIX哲学
+            - 简单性：KISS
+            - 集中性（功能单一性）
+            - 可重用组件
+            - 过滤器
+            - 开发的文件格式
+            - 灵活性
+    - 1.1.2 什么是Linux
+    - 1.1.3 GNU项目和自由软件基金会
+    - 1.1.4 Linux发生版
+- 1.2 Linux程序设计
+    - 1.2.1 Linux程序
+        - 可执行文件和脚本
+    - 1.2.2 文本编辑器
+    - 1.2.3 C语言编辑器
+    - 1.2.4 开发系统引导
+        - 1.应用程序
+        - 2.头文件
+        - 3.库文件
+        - 4.静态库
+            - ar crv libfoo.a bill.o fred.o (c create r insert v verbose)
+        - 5.共享库
+            - /etc/ld.so.config，ldconfig
+            - ldd 查看程序需要的动态库
+- 1.3 获得帮助
+    - man
+    - info
+- 1.4 小结
+
+# 第二章 shell程序设计
+- 2.1 为什么使用shell编程
+- 2.2 一点哲学
+- 2.3 什么是shell
+- 2.4 管道与重定向
+    - 2.4.1 重定向输出
+        - kill -1 1234 >killouterr.txt 2>&1
+    - 2.4.2 重定向输入
+    - 2.4.3 管道
+        - 决不要在命令流中重复使用相同的文件名，cat mydata.txt | sort | uniq | > mydata.txt
+- 2.5 作为程序设计语言的shell
+    - 2.5.1 交互式程序
+    - 2.5.2 创建脚本
+        - 脚本程序上本质上被看作是shell的标准输入
+        - [first.sh](/Chapter1/2.5.2/first.sh)
+    - 2.5.3 把脚本设置为可执行
+- 2.6 shell的语法
+    - 2.6.1 变量
+        - 默认情况下，所有变量都被看作字符串并以字符串形式存储
+        - 1.使用引号
+            - 单引号，不展开
+            - 双引号，展开
+            - [qutation_mark.sh](/Chapter1/2.6.1/para_envpara.sh)
+        - 2.环境变量
+        - 3.参数变量
+            - $1,$2
+            - $*
+            - $@
+        - [para_envpara.sh](/Chapter1/2.6.1/para_envpara.sh)
+    - 2.6.2 条件
+        - test或\[ 命令
+        - \[ 符号和被检查的条件之间要留出空格
+    - 2.6.3 控制结构
+        - 1.if语句
+            - [if_statement.sh](/Chapter1/2.6.3/if_statement.sh)
+        - 2.elif语句
+        - 3.一个与变量有关的问题
+            - if \[ $timeofday = "yes" \] and if \[ "$timeofday" = "yes" \]
+        - 4.for语句
+            - [for_statement.sh](/Chapter1/2.6.3/for_statement.sh)
+        - 5.while语句
+            - [while_statement.sh](/Chapter1/2.6.3/while_statement.sh)
+        - 6.until语句
+            - [until_statement.sh](/Chapter1/2.6.3/until_statement.sh)
+        - 7.case语句
+            - [case_statement.sh](/Chapter1/2.6.3/case_statement.sh)
+        - 8.命令列表
+            - AND列表
+            - OR列表
+            - [and_or_statement.sh](/Chapter1/2.6.3/and_or_statement.sh)
+        - 9.语句块
+    - 2.6.4 函数
+        - [function.sh](/Chapter1/2.6.4/function.sh)
+    - 2.6.5 命令
+        - 1.break命令
+        - 2.:命令
+        - 3.continue命令
+        - 4..命令
+        - 5.echo命令
+        - 6.eval命令
+        - 7.exec命令
+        - 8.exit n命令
+        - 9.export命令
+        - 10.expr命令
+        - 11.printf命令
+        - 12.return命令
+        - 13.set命令
+        - 14.shift命令
+        - 15.trap命令
+        - 16.unset命令
+        - 17.另外两个有用的命令和正则表达式
+            - find命令
+                - -exec command
+            - grep命令
+            - 正则表达式
+    - 2.6.6 命令的执行
+        - 1.算术扩展
+            - ${{}}
+            - [arithmetic_expansion.sh](/Chapter1/2.6.6/arithmetic_expansion.sh)
+        - 2.参数扩展
+            - ${}
+            - [para_expansion.sh](/Chapter1/2.6.6/para_expansion.sh)
+    - 2.6.7 here文档
+        - [here.sh](/Chapter1/2.6.7/here.sh)
+    - 2.6.8 调试脚本程序
+
+- 2.7 迈向图形化：dialog工具
+    - [dialog_tool.sh](/Chapter1/2.7/dialog_tool.sh)
+    - [questions.sh](/Chapter1/2.7/questions.sh)
+
+- 2.8 综合应用
+    - 2.8.1 需求
+    - 2.8.2 设计
+    - 2.8.3 应用程序的说明
+    - [cd.sh](/Chapter1/2.8/cd.sh)
+
+- 2.9 小结
